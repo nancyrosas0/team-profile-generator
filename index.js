@@ -1,6 +1,6 @@
 const { writeFile, copyFile } = require("./utils/generate-site.js");
 const inquirer = require("inquirer");
-//const generatePage = require('./src/page-template');
+const generatePage = require('./src/page-template');
 
 const promptUser = () => {
   return inquirer.prompt([
@@ -73,7 +73,6 @@ Add an Engineer or Intern
   }
   return inquirer
     .prompt([
-
       {
         type: "confirm",
         name: "addEngineer",
@@ -140,7 +139,7 @@ Add an Engineer or Intern
       },
       {
         type: "input",
-        name: "name",
+        name: "internName",
         message: "Enter the Intern\'s name. (Required)",
         validate: (nameInput) => {
           if (nameInput) {
@@ -153,7 +152,7 @@ Add an Engineer or Intern
       },
       {
         type: "input",
-        name: "id",
+        name: "internId",
         message: "Enter the Intern\'s employee Id (Required)",
         validate: (idInput) => {
           if (idInput) {
@@ -166,7 +165,7 @@ Add an Engineer or Intern
       },
       {
         type: "input",
-        name: "email",
+        name: "internEmail",
         message: "Enter Intern\'s email address. (Required)",
         validate: (idInput) => {
           if (idInput) {
